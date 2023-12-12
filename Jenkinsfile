@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build users client') {
             steps {
                 echo 'Building...'
                 // Add your build steps here
             }
         }
 
-        stage('Lint') {
+        stage('Lint users client') {
             steps {
                 echo 'Linting...'
                 // Add your linting steps here
