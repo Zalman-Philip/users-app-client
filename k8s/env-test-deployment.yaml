@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: env-test-deployment
+  namespace: env-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: env-test-app
+  template:
+    metadata:
+      labels:
+        app: env-test-app
+    spec:
+      containers:
+        - name: env-test-app
+          image: env-test:1.0.0 #replace with the image that you build
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: env-test-configmap

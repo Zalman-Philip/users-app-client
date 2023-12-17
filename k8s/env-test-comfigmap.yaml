@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-test-configmap
+  namespace: env-test
+data:
+  BASE_URL: "success"
