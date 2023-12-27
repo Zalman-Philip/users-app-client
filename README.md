@@ -31,8 +31,9 @@
 2. interface Window {
    _BASE_URL_: string;
    }
-
-export const BASE*URL = (window as unknown as Window).\_BASE_URL* || "failed";
+   const url = (window as unknown as Window)._BASE_URL_;
+   export const BASE_URL =
+   url !== "BASE_URL_PLACEHOLDER" ? url : "http://localhost:3000";
 
 # and now we are free to go
 
@@ -43,9 +44,9 @@ export const BASE*URL = (window as unknown as Window).\_BASE_URL* || "failed";
    sub_filter "BASE_URL_PLACEHOLDER" ${BASE_URL};
    }
 
-# in order to prevent the server to send to the browser using a cached version of the resource add to the location block this line
+<!-- # in order to prevent the server to send to the browser using a cached version of the resource add to the location block this line
 
-4. add_header Cache-Control "no-store";
+4. add_header Cache-Control "no-store"; -->
 
 # happy coding
 

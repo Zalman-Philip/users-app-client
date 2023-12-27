@@ -1,7 +1,7 @@
 server {
       listen 80;
       location / {
-        add_header Cache-Control "no-store";
+        # add_header Cache-Control "no-store";
         sub_filter_once on;
         sub_filter "BASE_URL_PLACEHOLDER" ${BASE_URL};
         root /usr/share/nginx/html;
