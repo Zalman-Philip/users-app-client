@@ -18,11 +18,7 @@ RUN npm run build && npm cache clean --force
 FROM nginx:alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
-COPY --from=builder /app/src/nginx/default.conf /etc/nginx/conf.d/default.conf
 
-COPY env.sh /usr/share/nginx/html
+COPY --from=builder /app/src/templates /etc/nginx/templates
 
-RUN chmod +x /usr/share/nginx/html/env.sh
-
-EXPOSE 80
-CMD ["/usr/share/nginx/html/env.sh", "nginx", "-g", "daemon off;"]
+CMD [ "nginx", "-g", "daemon off;"]

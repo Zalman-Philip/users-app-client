@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: env-test-app
-          image: env-test:1.0.0 #replace with the image that you build
+          image: env-test:nginx-temlate2 #replace with the image that you build
           ports:
             - containerPort: 80
           envFrom:

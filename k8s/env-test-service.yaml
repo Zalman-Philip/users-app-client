@@ -4,7 +4,6 @@ metadata:
   name: env-test-service
   namespace: env-test
 spec:
-  type: LoadBalancer
   selector:
     app: env-test-app
   ports:
