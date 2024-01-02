@@ -4,7 +4,7 @@
 
 1. mkdir templates
 
-# inside the folder create a file ends with .conf.templates
+# inside the folder create a file ends with .conf.template
 
 2. touch /templates/default.conf.templates
 
